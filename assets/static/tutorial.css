@@ -1,0 +1,20 @@
+.language-switch {
+    margin: auto 1em 1em auto;
+}
+@media(min-width: 992px) {  /* md or up */
+    .language-switch {
+        float: right;
+    }
+}
+.content p {
+    text-align: justify;
+}
+.content img {
+    max-width: 100%;
+}
+.content .alert {
+    margin-top: 16px;
+}
+.content .alert .close {
+    margin-left: 8px;
+}

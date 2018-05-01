@@ -63,3 +63,16 @@ footer a, footer a:visited {
 footer a:hover, footer a:focus, footer a:active {
     color: #FFF;
 }
+
+p img {
+    display: block;
+    margin: 0 auto;
+}
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+.katex {
+    font-size: 12px;
+}

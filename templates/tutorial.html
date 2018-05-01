@@ -1,6 +1,45 @@
-{% extends "layout.html" %}
-{% block title %}{{ this.title }}{% endblock %}
-{% block body %}
-  <h2>{{ this.title }}</h2>
-  {{ this.body }}
-{% endblock %}
+{% extends 'layout.html' %}
+
+{% block title %}{{ this.title }} | {{ super() }}{% endblock title %}
+
+{% block meta_description %}這是我們為想學習 Django 的女孩們量身打造的中文教學。{% endblock meta_description %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ '/static/tutorial.css'|url }}">
+{% endblock css %}
+
+
+{% block content %}
+
+{% if this.os_switch %}
+<div class="text-right language-switch row">
+  選擇作業系統：
+  <select name="os" id="id_os">
+    <option value="windows">Windows</option>
+    <option value="osx">macOS</option>
+    <option value="linux">Linux</option>
+  </select>
+</div>
+{% endif %}
+
+<h1>{{ this.title }}</h1>
+
+{% if this.os_switch %}
+<div class="alert alert-info" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <p>在開始之前，請先確認一下你用的作業系統。這個頁面的右上角（看那邊↗︎↗︎↗︎）應該會有一個「<strong>選擇作業系統</strong>」區塊。請依照你的作業系統選擇！</p>
+</div>
+{% endif %}
+
+{{ this.body }}
+
+{% endblock content %}
+
+
+{% block js %}
+{{ super() }}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
+<script type="text/javascript">window.DEFAULT_OS = 'windows';</script>
+<script type="text/javascript" src="{{ '/static/tutorial.js'|url }}"></script>
+{% endblock js %}
