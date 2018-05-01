@@ -3,7 +3,7 @@ import re
 
 import mistune
 import slugify
-import yaml
+# import yaml
 
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -199,16 +199,16 @@ def markdown_to_html(markdown, style=None, renderer_cls=None):
     # TODO: Fix bundlepath.
 
     md = Markdown(renderer=renderer)
-    fm_match = FRONT_MATTER_PATTERN.match(markdown)
-    front_matter = {}
-    if fm_match:
-        try:
-            front_matter = yaml.load(fm_match.group(1))
-        except yaml.YAMLError:
-            pass
-        else:
-            offset = fm_match.end(0) + 1
-            markdown = markdown[offset:]
+    # fm_match = FRONT_MATTER_PATTERN.match(markdown)
+    # front_matter = {}
+    # if fm_match:
+    #     try:
+    #         front_matter = yaml.load(fm_match.group(1))
+    #     except yaml.YAMLError:
+    #         pass
+    #     else:
+    #         offset = fm_match.end(0) + 1
+    #         markdown = markdown[offset:]
     html = md.render(markdown)
     return html
     # return html, front_matter, formatter.get_style_defs('.highlight > pre')

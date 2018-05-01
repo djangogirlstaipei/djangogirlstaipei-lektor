@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ this.title }} | {{ super() }}{% endblock title %}
+
+{% block meta_description %}這是我們為想學習 Django 的女孩們量身打造的中文教學。{% endblock meta_description %}
+
+{% block css %}
+{{ super() }}
+<link rel="stylesheet" href="{{ '/static/page.css'|url }}">
+{% endblock css %}
+
+{% block content %}
+
+<h1>{{ this.title }}</h1>
+
+<p>這是我們為想學習 Django 的女孩們量身打造的中文教學。想了解更多嗎？也可以看看 Django Girls 的<a href="https://tutorial.djangogirls.org">原版教學</a>！</p>
+
+{{ this.flow }}
+
+{% endblock content %}

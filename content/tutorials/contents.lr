@@ -1,1 +1,31 @@
-title: ""
+title: Django Girls 教學手冊
+---
+flow:
+
+#### track ####
+title: 課前準備
+----
+tag: homework
+----
+description: 在活動開始之前，先做好準備，可以讓你在課程學到更多東西！
+
+#### track ####
+title: 前導課程
+----
+tag: lead
+----
+description: 為了使用 Django，我們必須先學習一些寫 Django 程式時用到的工具。來看看它們！
+
+#### track ####
+title: Django 教學
+----
+tag: django
+----
+description: 讓我們應用前面所學到的知識，一同來學習 Django，建立屬於你自己的網站！
+
+#### track ####
+title: 進階教材
+----
+tag: extra
+----
+description: 看完了前面的教學，還意猶未盡嗎？下面的額外指南可以提供一些不同觀點和選擇。

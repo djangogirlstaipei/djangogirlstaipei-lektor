@@ -1,0 +1,13 @@
+<div class="tutorial-track track-{{ this.tag }}">
+  <h2 class="tutorial-track-title">{{ this.title }}</h2>
+  <p>{{ this.description }}</p>
+  
+  {% for post in site.query('/tutorials').filter(F.track_tag == this.tag) %}
+  <a href="{{ post|url }}">
+    <div class="tutorial-item">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
