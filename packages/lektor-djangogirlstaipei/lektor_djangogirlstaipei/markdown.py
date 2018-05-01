@@ -5,15 +5,11 @@ import re
 
 import mistune
 import slugify
-# import yaml
 
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.util import ClassNotFound
 from pygments.lexers import get_lexer_by_name
-
-
-FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
 
 
 class BlockGrammar(mistune.BlockGrammar):
@@ -84,9 +80,8 @@ class Markdown(mistune.Markdown):
 class Renderer(mistune.Renderer):
     """Custom Markdown to HTML renderer.
     """
-    def __init__(self, formatter, bundlepath, *args, **kwargs):
+    def __init__(self, formatter, *args, **kwargs):
         super(Renderer, self).__init__(*args, **kwargs)
-        self.bundlepath = bundlepath or ''
         self.formatter = formatter
         self.id_slugs = collections.defaultdict(int)
 
@@ -116,27 +111,8 @@ class Renderer(mistune.Renderer):
             return super(Renderer, self).block_code(code, lang)
         return highlight(code, lexer, self.formatter)
 
-    def image(self, src, title, text):
-        """Implement local static file resolving.
-        """
-        src = self._resolve_asset_path(src)
-        return super(Renderer, self).image(src, title, text)
-
     def inline_math(self, src):
         return '<span class="math">{src}</span>'.format(src=src)
-
-    def _resolve_asset_path(self, path):
-        return path     # TODO: Actually implement this.
-        # if path.startswith('javascript:'):  # Taken from mistune.
-        #     return path
-        # elif path.startswith('//') or '://' in path:    # Probably absolute.
-        #     return path
-        # abspath = '/'.join([
-        #     c.strip('/') for c in (
-        #         '', settings.STATIC_URL, self.bundlepath, path,
-        #     )
-        # ])
-        # return abspath
 
 
 class TutorialRenderer(Renderer):
@@ -178,39 +154,17 @@ class TutorialRenderer(Renderer):
         return str_format.format(thead=header, tbody=body)
 
 
-def markdown_to_html(markdown, style=None, renderer_cls=None):
+def markdown_to_html(markdown, style=None, renderer_cls=Renderer):
     """Renders given Markdown input to HTML.
-    :path str: Static file path to a given post. The "post" should be a
-        directory containing file ``text.md``.
-    :prefix str: Prefix prepended to :path: when resolving static file path.
-        Default is ``posts``.
-    :return: HTML output, front-matter meta, and CSS. If no valid front-matter
-        can be found, the second item returned will be an empty ``dict``.
-    :rtype: A three-tuple (``str``, ``dict``, ``str``), or ``None`` on errors.
     """
-    if renderer_cls is None:
-        renderer_cls = Renderer
     if style is None:
         style = 'default'
     try:
         formatter = HtmlFormatter(style=style)
     except ClassNotFound:
         formatter = HtmlFormatter(style='default')
-
-    renderer = renderer_cls(formatter=formatter, bundlepath=None)
-    # TODO: Fix bundlepath.
-
+    renderer = renderer_cls(formatter=formatter)
     md = Markdown(renderer=renderer)
-    # fm_match = FRONT_MATTER_PATTERN.match(markdown)
-    # front_matter = {}
-    # if fm_match:
-    #     try:
-    #         front_matter = yaml.load(fm_match.group(1))
-    #     except yaml.YAMLError:
-    #         pass
-    #     else:
-    #         offset = fm_match.end(0) + 1
-    #         markdown = markdown[offset:]
     html = md.render(markdown)
     return html
-    # return html, front_matter, formatter.get_style_defs('.highlight > pre')
+    # return html, formatter.get_style_defs('.highlight > pre')

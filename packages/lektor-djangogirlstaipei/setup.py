@@ -10,7 +10,6 @@ setup(
         'pygments',
         'six',
         'slugify',
-        'pyyaml',
     ],
     entry_points={
         'lektor.plugins': [

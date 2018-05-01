@@ -7,7 +7,7 @@ import lektor.types
 import markupsafe
 import six
 
-from .markdown import markdown_to_html
+from .markdown import markdown_to_html, TutorialRenderer
 
 
 class TutorialMarkdown(object):
@@ -21,7 +21,7 @@ class TutorialMarkdown(object):
 
     def __getattr__(self, key):
         if key == '_html':
-            html = markdown_to_html(self.source)
+            html = markdown_to_html(self.source, renderer_cls=TutorialRenderer)
             self._html = html
             return html
         return super(TutorialMarkdown, self).__getattr__(key)
