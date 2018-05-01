@@ -7,6 +7,7 @@
 {% block css %}
 {{ super() }}
 <link rel="stylesheet" href="{{ '/static/tutorial.css'|url }}">
+{{ this.body.style_tag }}
 {% endblock css %}
 
 

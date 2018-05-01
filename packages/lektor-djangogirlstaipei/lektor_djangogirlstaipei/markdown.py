@@ -166,5 +166,4 @@ def markdown_to_html(markdown, style=None, renderer_cls=Renderer):
     renderer = renderer_cls(formatter=formatter)
     md = Markdown(renderer=renderer)
     html = md.render(markdown)
-    return html
-    # return html, formatter.get_style_defs('.highlight > pre')
+    return html, formatter.get_style_defs('.highlight > pre')

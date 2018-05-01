@@ -20,10 +20,11 @@ class TutorialMarkdown(object):
         return bool(self.source)
 
     def __getattr__(self, key):
-        if key == '_html':
-            html = markdown_to_html(self.source, renderer_cls=TutorialRenderer)
-            self._html = html
-            return html
+        if key in ['_html', '_styles']:
+            self._html, self._styles = markdown_to_html(
+                self.source, renderer_cls=TutorialRenderer,
+            )
+            return getattr(self, key, '')
         return super(TutorialMarkdown, self).__getattr__(key)
 
     def __str__(self):
@@ -43,6 +44,10 @@ class TutorialMarkdown(object):
     @property
     def html(self):
         return self._html
+
+    @property
+    def style_tag(self):
+        return markupsafe.Markup('<style>{}</style>'.format(self._styles))
 
 
 class TutorialMarkdownDescriptor(object):
