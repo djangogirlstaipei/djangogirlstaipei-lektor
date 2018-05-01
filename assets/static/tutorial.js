@@ -1,4 +1,4 @@
-/* global $ katex DEFAULT_OS */
+/* global $ katex */
 
 if (katex) {
     $('span.math').each(function () {
@@ -17,8 +17,25 @@ if (katex) {
     })
     return obj
   }
+
+  var detectOS = function () {
+    var plat = navigator.platform.toUpperCase()
+    if (plat.indexOf('MAC') !== -1) {
+      return 'osx'
+    } else if (plat.indexOf('WIN') !== -1) {
+      return 'windows'
+    } else {
+      return 'linux'
+    }
+  }
   
   var switchOS = function (name) {
+    var pathParts = document.location.href.split('?')
+    var params = parseParam(pathParts[1])
+    if (!name) {
+      name = params.os ? params.os : detectOS()
+    }
+
     // Show only text code blocks for current OS.
     $('.os').hide().filter('.' + name).show()
   
@@ -29,8 +46,6 @@ if (katex) {
   
     // Use the history API to add the OS name to the query string.
     if (window.history && window.history.replaceState) {
-      var pathParts = document.location.href.split('?')
-      var params = parseParam(pathParts[1])
       if (params.os !== name) {
         params.os = name
         window.history.replaceState(
@@ -40,9 +55,12 @@ if (katex) {
         )
       }
     }
+
+    // Select the corresponding item.
+    $('#id_os').val(name)
   }
   
-  switchOS(DEFAULT_OS)
+  switchOS(null)
   
   $('#id_os').change(function (e) {
     var name = $(this).val()

@@ -8,4 +8,26 @@ track_tag: homework
 ---
 description: 網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。
 ---
-body: 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
+body:
+
+當你的網站完成後，我們必須找個公開的地方來放它，才能讓它被全世界(!)看到。不過在那之前，我們必須先設定一下。在這個教學中，我們會帶領你設定 **[PythonAnywhere](https://www.pythonanywhere.com)** 這個在雲端執行 Python 程式的服務。
+
+
+## 註冊 PythonAnywhere 帳號
+
+前往 PythonAnywhere 的首頁 <https://www.pythonanywhere.com>，點擊右上角的 **Pricing & Signup**。
+
+![PythonAnywhere 首頁註冊連結](./pythonanywhere-frontpage-signup-link.png)
+
+按下左上角 **Beginner: Free!** 框框裡的「Create a Beginner account」按鈕。
+
+![PythonAnywhere Beginner 註冊鈕](./beginner-account-signup.png)
+
+在出現的表單內填上你想要的使用者名稱、密碼、以及綁定的 Email 帳號。把最下面的「I agree to the Terms and Conditions」打勾，然後按下「Register」按鈕。
+
+稍等幾分鐘後，去你輸入的信箱收信。你應該會收到一封像這樣的 Email：
+
+![PythonAnywhere 認證郵件](./signup-email.png)
+
+按下第二段的「click this link」，即可完成註冊。
+

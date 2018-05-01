@@ -23,25 +23,25 @@ body:
 
 首先下載[最新版本的 Git](https://git-scm.com/download/win)，並雙擊下載後的安裝檔開始安裝。程式可能會先跳出要求管理員權限的視窗：
 
-![Git 安裝前的使用者帳戶控制視窗](assets/windows/git-admin-alert.png)
+![Git 安裝前的使用者帳戶控制視窗](./windows-git-admin-alert.png)
 
 請按「是」。
 
 接著你應該會看到這個畫面：
 
-![Git 安裝起始畫面](assets/windows/git-installation-start.png)
+![Git 安裝起始畫面](./windows-git-installation-start.png)
 
 請持續按下一步，直到出現這個畫面：
 
-![Git 安裝根目錄畫面](assets/windows/git-installation-root.png)
+![Git 安裝根目錄畫面](./windows-git-installation-root.png)
 
 請打開記事本，把文字框裡的內容記下來。我們之後會用到。（不要照抄這篇文章裡的內容，因為你的電腦上可能會不一樣。請從你自己電腦上出現的文字框拷貝！）
 
-![將 Git 安裝根目錄記錄於記事本](assets/windows/git-record-path.png)
+![將 Git 安裝根目錄記錄於記事本](./windows-git-record-path.png)
 
 接著回到安裝程式，繼續按下一步，直到它開始安裝。當出現這個畫面時，就代表安裝完成。
 
-![Git 安裝完成](assets/windows/git-installation-done.png)
+![Git 安裝完成](./windows-git-installation-done.png)
 
 先別急著按 Finish！中間有個「View Release Notes」先取消打勾，再按 Finish 關掉視窗。如果你忘了取消，就會再另外跳一個視窗出來——也別緊張，關掉它就好了，不會怎樣。
 
@@ -49,25 +49,25 @@ body:
 
 首先[下載 Python 3.6.1](https://www.python.org/ftp/python/3.6.1/python-3.6.1.exe)。下載後雙擊安裝檔。如果你看到確認執行應用程式的視窗：
 
-![Python 確認執行視窗](assets/windows/python-run-alert.png)
+![Python 確認執行視窗](./windows-python-run-alert.png)
 
 請選擇「執行」。
 
 在開始安裝的初始畫面中：
 
-![Python 安裝初始畫面](assets/windows/python-installation-start.png)
+![Python 安裝初始畫面](./windows-python-installation-start.png)
 
 請確認「Install launcher for all users」**不要**打勾。接著選擇「Customize installation」，按下一步，直到出現下面的畫面：
 
-![Python 安裝根目錄畫面](assets/windows/python-installation-root.png)
+![Python 安裝根目錄畫面](./windows-python-installation-root.png)
 
 把「Customize install location」下面文字框內的文字同樣記到記事本裡。現在你的記事本應該會類似這樣（路徑可能略有不同）：
 
-![將 Python 安裝根目錄記錄於記事本](assets/windows/python-record-path.png)
+![將 Python 安裝根目錄記錄於記事本](./windows-python-record-path.png)
 
 回到安裝程式，再按一次下一步，就會開始安裝。稍等一會兒，直到出現這個畫面
 
-![Python 安裝完成畫面](assets/windows/python-installation-done.png)
+![Python 安裝完成畫面](./windows-python-installation-done.png)
 
 就代表安裝完成了！直接按 *Close* 關閉即可。
 
@@ -75,25 +75,25 @@ body:
 
 接著請下載[這個檔案](http://d.pr/f/SyJKva)，然後按兩下執行它。如果你看到確認執行應用程式的視窗：
 
-![create-env.vbs 確認執行視窗](assets/windows/create-env-run-alert.png)
+![create-env.vbs 確認執行視窗](./windows-create-env-run-alert.png)
 
 請選擇「執行」。
 
 還記得剛剛我們在記事本寫的那兩行嗎？請依序把它們拷貝起來，在出現的視窗裡依序**按右鍵選擇貼上**，然後按「確定」。看起來應該會像這樣：
 
-![create-env.vbs 操作過程：Git 路徑](assets/windows/create-env-git-path-prompt.png)
+![create-env.vbs 操作過程：Git 路徑](./windows-create-env-git-path-prompt.png)
 
-![create-env.vbs 操作過程：Python 路徑](assets/windows/create-env-python-path-prompt.png)
+![create-env.vbs 操作過程：Python 路徑](./windows-create-env-python-path-prompt.png)
 
 當你輸入兩個路徑後，程式會結束。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
 
 > 如果你使用 Windows Vista 或 XP，上述安裝可能會出現錯誤。我們強烈建議立即升級至 Windows 10。
 
-![Django Environment 桌面捷徑](assets/windows/django-desktop-icon.png)
+![Django Environment 桌面捷徑](./windows-django-desktop-icon.png)
 
 雙擊打開它。你應該會看到這樣的畫面：
 
-![Windows Command Prompt](assets/windows/command-prompt.png)
+![Windows Command Prompt](./windows-command-prompt.png)
 
 出現的這行字叫做 *prompt*。當它出現時（結尾會是一個 `>` 符號），代表終端機已經完成所有的工作，準備好等你輸入下一個指令。
 
@@ -108,7 +108,7 @@ git config --global user.email "你的 email"
 
 接著輸入 `python` 看看。你應該會看到類似下面的畫面：
 
-![Windows Python Prompt](assets/windows/python-prompt.png)
+![Windows Python Prompt](./windows-python-prompt.png)
 
 你可以直接關掉這個視窗。未來當我們說「打開終端機」時，就代表你需要用這個「Django Environment」捷徑打開視窗來使用。
 
@@ -122,11 +122,11 @@ git config --global user.email "你的 email"
 
 我們推薦使用 [Homebrew](http://brew.sh) 安裝需要的工具。首先，按下螢幕右上角的放大鏡（它叫 Spotlight），並輸入「終端機」（英文：Terminal），像這樣：
 
-![macOS Spotlight 搜尋終端機](assets/osx/spotlight.png)
+![macOS Spotlight 搜尋終端機](./osx-spotlight.png)
 
 點一下第一個結果，應該會出現類似這樣的視窗：
 
-![macOS 終端機](assets/osx/terminal.png)
+![macOS 終端機](./osx-terminal.png)
 
 未來當我們說「打開終端機」時，就代表你需要打開一個這樣的視窗。你可能會想要把這個程式固定到 Dock 上，方便未來開啟。
 
@@ -140,11 +140,11 @@ git config --global user.email "你的 email"
 
 如果畫面停在這個狀態，請再按一次 Return：
 
-![macOS Homebrew 安裝初始畫面](assets/osx/homebrew-installation-start.png)
+![macOS Homebrew 安裝初始畫面](./osx-homebrew-installation-start.png)
 
 如果畫面顯示 `Password:`，請輸入你的管理者密碼。當你輸入時密碼並不會顯示在畫面上（也不會出現 `*****` 這樣！），請不要緊張，放心輸入後按下 Return 即可：
 
-![macOS 詢問密碼](assets/osx/password-prompt.png)
+![macOS 詢問密碼](./osx-password-prompt.png)
 
 接著系統會開始下載、安裝必要元件，應該會花一些時間，請耐心等待。
 
@@ -165,7 +165,7 @@ Read the analytics documentation (and how to opt-out) here:
 
 便代表安裝完成。現在你的終端機視窗應該類似下面這樣，最後一行是以 `$` 結尾：
 
-![macOS 完成 Homebrew 安裝後狀態](assets/osx/homebrew-installation-done.png)
+![macOS 完成 Homebrew 安裝後狀態](./osx-homebrew-installation-done.png)
 
 ### 安裝 Git 與 Python
 
@@ -186,7 +186,7 @@ git config --global user.email "你的 email"
 
 接著輸入 `python3` 檢查 Python 是否成功安裝。你應該會看到類似下面的畫面：
 
-![macOS Python Prompt](assets/osx/python-interactive.png)
+![macOS Python Prompt](./osx-python-interactive.png)
 
 就代表安裝完成了，恭喜！這個視窗可以直接關掉沒關係，可能會跳警告但是不用理它。
 
@@ -200,11 +200,11 @@ git config --global user.email "你的 email"
 
 首先按下左上角的搜尋鈕，在輸入框中搜尋「terminal」：
 
-![Ubuntu 搜尋 terminal](assets/ubuntu/search-terminal.png)
+![Ubuntu 搜尋 terminal](./ubuntu-search-terminal.png)
 
 選擇第一個選項，應該會出現像下面的視窗：
 
-![Ubuntu terminal](assets/ubuntu/terminal.png)
+![Ubuntu terminal](./ubuntu-terminal.png)
 
 未來當我們說「打開終端機」時，就代表你需要打開一個這樣的視窗。你可能會想要把這個程式固定到 Launcher 上，方便未來開啟。
 
@@ -218,7 +218,7 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt install git python3 python
 
 如果出現類似下面的畫面（顯示 `[sudo] password for XXX:`，`XXX` 會是你的使用者名稱），請輸入你的管理者密碼。當你輸入時密碼並不會顯示在畫面上（也不會出現 `*****` 這樣！），請不要緊張，放心輸入後按下 Enter 即可：
 
-![Ubuntu 詢問密碼](assets/ubuntu/password-prompt.png)
+![Ubuntu 詢問密碼](./ubuntu-password-prompt.png)
 
 這應該會跑一陣子。完成之後，請在 Git 設定你的名字和 email：
 
@@ -231,7 +231,7 @@ git config --global user.email "你的 email"
 
 接著輸入 `python3` 看看。你應該會看到類似下面的畫面：
 
-![Ubuntu Python Prompt](assets/ubuntu/python-interactive.png)
+![Ubuntu Python Prompt](./ubuntu-python-interactive.png)
 
 代表安裝成功！這個視窗可以直接關掉沒關係。
 
