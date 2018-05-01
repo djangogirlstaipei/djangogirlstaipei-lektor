@@ -1,0 +1,11 @@
+_model: tutorial
+---
+title: Python 入門
+---
+ordering: 3
+---
+track_tag: lead
+---
+description: 你已經把 Python 裝好了，接下來讓我們來開始寫點程式吧！
+---
+body: 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：

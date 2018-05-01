@@ -1,0 +1,15 @@
+{% extends 'page.html' %}
+
+{% block title %}重新導向至 {{ this.target }}…{% endblock title %}
+
+{% block meta_description %}重新導向至 {{ this.target }}…{% endblock meta_description %}
+
+{% block content %}
+
+<h1>重新導向至 <a href="{{ this.target }}">{{ this.target }}</a>…</h1>
+
+<script>
+window.location = '{{ this.target }}';
+</script>
+
+{% endblock content %}

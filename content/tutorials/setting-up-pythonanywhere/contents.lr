@@ -1,0 +1,11 @@
+_model: tutorial
+---
+title: PythonAnywhere 註冊與設定
+---
+ordering: 1
+---
+track_tag: homework
+---
+description: 網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。
+---
+body: 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
