@@ -1,0 +1,2 @@
+/                   https://djangogirls.org/taipei
+/tutorials/django   https://djangogirlstaipei.gitbooks.io/django-girls-taipei-tutorial/
