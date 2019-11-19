@@ -1,6 +1,6 @@
 _model: tutorial
 ---
-title: 部署到 Heroku
+title: 用 Heroku 部署網站
 ---
 ordering: 0
 ---
@@ -65,7 +65,7 @@ body:
 ```console
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ---osx
-brew install heroku
+brew install heroku/brew/heroku
 ```
 
 )))
